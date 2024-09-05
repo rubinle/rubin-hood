@@ -352,7 +352,7 @@ footer p {
     border-radius: 8px; /* Macht die Ecken des Rahmens abgerundet */
     margin: 20px; /* Abstand zwischen den Beiträgen */
     padding: 10px; /* Innenabstand innerhalb des Beitrags */
-    width: 440px; /* Breite des Containers */
+    width: 430px; /* Breite des Containers */
     max-width: 700px; /* Maximale Breite */
     height: auto; /* Feste Höhe des Beitrags */
     opacity: 0; /* Beitrag ist anfangs unsichtbar */
