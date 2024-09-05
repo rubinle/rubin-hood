@@ -115,22 +115,19 @@ header {
     display: none; /* Versteckt das mobile Menü standardmäßig */
     flex-direction: column; /* Ordnet die Inhalte des mobilen Menüs vertikal an */
     align-items: center; /* Zentriert die Inhalte des mobilen Menüs horizontal */
-    background-color: #F6F5F1; /* Setzt die Hintergrundfarbe des mobilen Menüs */
-    padding: 20px;
-    position: fixed;
-    top: 0;
-    right: 0; /* Positioniert das Menü am rechten Rand */
-    height: 100vh; /* Setzt die Höhe auf die volle Ansichtshöhe */
-    transform: translateX(100%); /* Startposition des Menüs: außerhalb des Bildschirms */
-    transition: transform 0.3s ease-in-out; /* Fügt eine sanfte Übergangsanimation hinzu */
-    z-index: 1050;
-    width: 300px; /* Breite des Menüs */
-    border: 1px solid #04A4BA;
-    border-radius: 8px;
-}
-
-.mobile-menu.open {
-    transform: translateX(0); /* Bringt das Menü in den sichtbaren Bereich */
+    background-color: #F6F5F1; /* Setzt die Hintergrundfarbe des mobilen Menüs auf ein dunkles Grau (#333) */
+    padding: 20px; /* Fügt Innenabstände von 20px um das mobile Menü herum hinzu */
+    position: absolute; /* Positioniert das mobile Menü relativ zum nächsthöheren Element mit 'position: relative' */
+    /* position: fixed; /* Fixiert das mobile Menü über dem restlichen Inhalt */
+    top: 25%; /* Positioniert das mobile Menü 60px unterhalb des Headers */
+    /* right: 50%; /* Setzt das mobile Menü an den rechten Rand des Containers */
+    left: 60%; /* Setzt das mobile Menü an den linken Rand des Containers */
+    transform: translate(-50%, -50%); /* Verschiebt das Menü um 50% seiner eigenen Breite und Höhe, um es zu zentrieren */
+    z-index: 1050; /* Stellt sicher, dass das mobile Menü über dem Hauptinhalt und dem Header liegt */
+    width: 90%; /* Verkleinert die Breite des Menüs auf sehr kleinen Bildschirmen */
+    max-width: 300px; /* Begrenze die maximale Breite des Menüs */
+    border: 1px solid #04A4BA; /* Fügt einen Rahmen von 2px hinzu, Farbe ist #04A4BA */
+    border-radius: 8px; /* Rundet die Ecken des Rahmens ab */
 }
 
 
@@ -156,21 +153,6 @@ header {
     gap: 15px; /* Fügt einen Abstand von 15px zwischen den Icons hinzu */
     margin-top: 20px; /* Fügt einen oberen Rand von 20px zwischen den Links und den Icons hinzu */
 }
-
-
-.close-menu {
-    position: absolute; /* Positioniere das Schließen-Symbol */
-    top: 10px;
-    right: 20px;
-    font-size: 50px;
-    cursor: pointer;
-    color: #AFB0B6; /* Setzt die Farbe des Symbols */
-}
-
-.close-menu:hover {
-    color: #04A4BA; /* Farbe beim Hover (optional) */
-}
-
 
 
 /* --------------------------------- Medienabfragen für kleinere Bildschirme --------------------------------- */
@@ -414,7 +396,7 @@ a {
 /* Menü Slide */
 
 .slide-in-top {
-    animation: slideInFromTop 2s ease-in-out forwards; /* Wende die Animation auf den Text an, Dauer: 3 Sekunden */
+    animation: slideInFromTop 3s ease-in-out forwards; /* Wende die Animation auf den Text an, Dauer: 3 Sekunden */
     font-size: 24px; /* Setzt die Schriftgröße des Logos auf 24 Pixel */
     margin-bottom: 20px; /* Füge einen Abstand unter dem Text hinzu */
     position: relative; /* Relativ zum normalen Layout positioniert */
@@ -448,25 +430,3 @@ a {
         opacity: 1;
     }
 }
-
-
-/* LOGO ANIMATION */
-
-/* Definiere eine neue Klasse für das Logo, das von oben hereinkommt */
-.slide-in-logo-top {
-    animation: slideInFromLogoTop 1s ease-in-out forwards; /* Animation auf das Logo anwenden */
-    opacity: 0; /* Startzustand ist unsichtbar */
-}
-
-/* Keyframes für das Einblenden des Logos von oben */
-@keyframes slideInFromLogoTop {
-    0% {
-        transform: translateY(-100%); /* Startposition des Logos: komplett außerhalb des Viewports oben */
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0); /* Endposition des Logos: an der richtigen Position */
-        opacity: 1;
-    }
-}
-

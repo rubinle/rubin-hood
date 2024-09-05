@@ -5,8 +5,8 @@
     <meta charset="UTF-8"> <!-- Legt die Zeichenkodierung des Dokuments auf UTF-8 fest -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Setzt das Viewport-Tag für responsives Design, damit die Seite auf mobilen Geräten richtig angezeigt wird -->
     <title>Responsive Header</title> <!-- Definiert den Titel der Webseite, der im Browser-Tab angezeigt wird -->
-    <link rel="stylesheet" href="styles.css"> <!-- Verknüpft das externe Stylesheet (CSS-Datei) zur Gestaltung der Seite -->
-    <script defer src="script.js"></script> <!-- Lädt das externe JavaScript mit der Datei "script.js" und führt es aus, nachdem das HTML-Dokument vollständig geladen wurde -->
+    <link rel="stylesheet" href="../styles.css"> <!-- Verknüpft das externe Stylesheet (CSS-Datei) zur Gestaltung der Seite -->
+    <script defer src="../script.js"></script> <!-- Lädt das externe JavaScript mit der Datei "script.js" und führt es aus, nachdem das HTML-Dokument vollständig geladen wurde -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"> <!-- Verlinkt die Font Awesome Bibliothek für die Verwendung von Icons -->
 </head>
 <!------------------------------------------ Ende des Dokumentstruktur ------------------------------------------>
@@ -18,10 +18,11 @@
         <!-- <a href="#" class="logo">Rubin</a> Das Logo der Webseite, das als Link zur Startseite dient -->
         <a href="#" class="logo">
             <!-- <img src="image/logo.png" alt="Rubin Logo" class="logo-img"> -->
-            <img src="logo/logo.png" alt="Rubin Logo" class="logo-img slide-in-logo-top">
+            <img src="../logo/logo.png" alt="Rubin Logo" class="logo-img slide-in-bottom">
+
         </a>
         <nav class="nav-links"> <!-- Navigationselement, das die Links zu den verschiedenen Seiten enthält -->
-            <a href="index.html" class="slide-in-top delay-1">Home</a> <!-- Link zur Startseite -->
+            <a href="#" class="slide-in-top delay-1">Home</a> <!-- Link zur Startseite -->
             <a href="#" class="slide-in-top delay-2">Über uns</a> <!-- Link zur "Über uns"-Seite -->
             <a href="#" class="slide-in-top delay-3">Dienste</a> <!-- Link zur Seite mit den angebotenen Diensten -->
             <a href="#" class="slide-in-top delay-4">Kontakt</a> <!-- Link zur Kontaktseite -->
@@ -38,12 +39,10 @@
             <span></span>
         </div>
     </header>
-
     
     <div class="mobile-menu"> <!-- Mobiles Menü, das auf kleinen Bildschirmen angezeigt wird -->
-        <span class="close-menu">&times;</span> <!-- Schließen-Symbol -->
         <nav> <!-- Navigationselement für das mobile Menü -->
-            <a href="index.html">Home</a> <!-- Link zur Startseite -->
+            <a href="#">Home</a> <!-- Link zur Startseite -->
             <a href="#">Über uns</a> <!-- Link zur "Über uns"-Seite -->
             <a href="#">Dienste</a> <!-- Link zur Seite mit den angebotenen Diensten -->
             <a href="#">Kontakt</a>
@@ -67,78 +66,6 @@
       <p class="slide-in slide-in-left">Mein Name ist Rubin, und ich habe diese Website ins Leben gerufen, um meine Leidenschaft für IT-Projekte zu präsentieren.</p>
       <p class="slide-in slide-in-right">Wie der legendäre Held Robin Hood, der Gutes tat und die Welt auf seine Weise veränderte, möchte auch ich durch innovative Lösungen und kreative Ansätze einen positiven Beitrag leisten – aber eben in der Welt der IT.</p>
     
-
-      <!---------------------------------- Blog-Beiträge ---------------------------------->
-<section class="posts"> <!-- Abschnitt für Blog-Beiträge -->
-
-<!-- 1 Beitrag -->
-  <a href="article1/article.html">
-  <div class="post" style="animation-delay: 1s;">
-    <img src="logo.jpg" alt="Beitragsbild 1" loading="lazy"> <!-- Bild des ersten Beitrags -->
-      <div class="post-content">
-          <h2>Beitragstitel 1</h2> <!-- Titel des ersten Beitrags -->
-          <p>Kurzbeschreibung des Beitrags 1. Klick für mehr Details.</p> <!-- Beschreibung des ersten Beitrags -->
-      </div>
-  </div>
-  </a>
-  <!-- Weitere Beiträge folgen dem gleichen Schema -->
-
-  <!-- 2 Beitrag -->
-<a href="article1/article.html">
-    <div class="post" style="animation-delay: 3s;"> 
-      <img src="logo2.png" alt="Beitragsbild 1" loading="lazy"> <!-- Bild des ersten Beitrags -->
-        <div class="post-content">
-            <h2>Beitragstitel 1</h2> <!-- Titel des ersten Beitrags -->
-            <p>Kurzbeschreibung des Beitrags 1. Klick für mehr Details.</p> <!-- Beschreibung des ersten Beitrags -->
-        </div>
-    </div>
-    </a>
-
-<!-- 3 Beitrag -->
-<a href="https://dein-link-hier.com">
-    <div class="post" style="animation-delay: 6s;"> 
-      <img src="logo.jpg" alt="Beitragsbild 1" loading="lazy"> <!-- Bild des ersten Beitrags -->
-        <div class="post-content">
-            <h2>Beitragstitel 1</h2> <!-- Titel des ersten Beitrags -->
-            <p>Kurzbeschreibung des Beitrags 1. Klick für mehr Details.</p> <!-- Beschreibung des ersten Beitrags -->
-        </div>
-    </div>
-    </a>
-
-<!-- 4 Beitrag -->
-<a href="https://dein-link-hier.com">
-    <div class="post" style="animation-delay: 9s;"> 
-      <img src="logo.jpg" alt="Beitragsbild 1" loading="lazy"> <!-- Bild des ersten Beitrags -->
-        <div class="post-content">
-            <h2>Beitragstitel 1</h2> <!-- Titel des ersten Beitrags -->
-            <p>Kurzbeschreibung des Beitrags 1. Klick für mehr Details.</p> <!-- Beschreibung des ersten Beitrags -->
-        </div>
-    </div>
-    </a>
-
-<!-- 5 Beitrag -->
-<a href="https://dein-link-hier.com">
-    <div class="post" style="animation-delay: 12s;"> 
-      <img src="logo.jpg" alt="Beitragsbild 1" loading="lazy"> <!-- Bild des ersten Beitrags -->
-        <div class="post-content">
-            <h2>Beitragstitel 1</h2> <!-- Titel des ersten Beitrags -->
-            <p>Kurzbeschreibung des Beitrags 1. Klick für mehr Details.</p> <!-- Beschreibung des ersten Beitrags -->
-        </div>
-    </div>
-    </a>
-
-<!-- 6 Beitrag -->
-<a href="https://dein-link-hier.com">
-    <div class="post" style="animation-delay: 15s;"> 
-      <img src="logo.jpg" alt="Beitragsbild 1" loading="lazy"> <!-- Bild des ersten Beitrags -->
-        <div class="post-content">
-            <h2>Beitragstitel 1</h2> <!-- Titel des ersten Beitrags -->
-            <p>Kurzbeschreibung des Beitrags 1. Klick für mehr Details.</p> <!-- Beschreibung des ersten Beitrags -->
-        </div>
-    </div>
-    </a>
-
-</section>
 <!---------------------------------- Ende Blog-Beiträge ---------------------------------->
 
     </div> <!-- Ende des Content-Bereichs -->    

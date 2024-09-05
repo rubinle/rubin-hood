@@ -23,13 +23,6 @@ document.addEventListener('click', (event) => {
 });
 
 
-const closeMenu = document.querySelector('.close-menu'); 
-
-closeMenu.addEventListener('click', () => {
-    mobileMenu.classList.remove('open'); // Entferne die Klasse 'open', um das Menü zu schließen
-});
-
-
 
 /*---------------------------------- Steuerung der Header-Transparenz beim Scrollen ----------------------------------*/
 /* Variable zur Speicherung der letzten Scrollposition */
