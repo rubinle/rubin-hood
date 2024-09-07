@@ -200,7 +200,7 @@ header {
 /* Diese Sektion betrifft den Hauptteil der Webseite */
 main {
     /* padding: 200px 200px 200px; /* Fügt einen Abstand von 50 Pixeln um den Hauptinhalt herum hinzu */
-    text-align: center; /* Zentriert den Text im Hauptinhalt */
+    /* text-align: center; /* Zentriert den Text im Hauptinhalt */
     padding-top: 100px; /* Höhe des Headers plus etwas zusätzlichen Platz */
 
 }
@@ -246,34 +246,46 @@ footer p {
     /* font-size: 1.9em; /* Beispielhafte Schriftgröße, passe sie nach Bedarf an */
     opacity: 0; /* Initiale Sichtbarkeit auf 0 setzen */
     animation-fill-mode: forwards; /* Sicherstellen, dass die Animation bei 100% bleibt */
-    animation-delay: 33.5s; /* Verzögerung bevor die Animation startet, z.B. 0.5 Sekunden */
+    animation-delay: 5s; /* Verzögerung bevor die Animation startet, z.B. 0.5 Sekunden */
     opacity: 1; /* Sichtbarkeit wieder auf 1 setzen */
 }
 
 /* Definiere die Animation für das Hereinfahren von links */
-.slide-in-left {
+.a {
     animation: slideInFromLeft 3s ease-in-out; /* Wende die Animation auf den Text an, Dauer: 3 Sekunden */
-    font-size: 24px; /* Setzt die Schriftgröße des Logos auf 24 Pixel */
+    font-size: 18px; /* Setzt die Schriftgröße des Logos auf 24 Pixel */
     margin-bottom: 20px; /* NEU: Füge einen Abstand unter dem Text hinzu */
+    text-align: right; /* Zentriert den Text im Hauptinhalt */
+    font-style: italic; /* Macht den Text innerhalb eines Absatzes kursiv */
 }
 
 /* Definiere die Animation für das Hereinfahren von oben */
-.slide-in-top {
+.b {
     animation: slideInFromTop 3s ease-in-out; /* Wende die Animation auf den Text an, Dauer: 3 Sekunden */
-    font-size: 24px; /* Setzt die Schriftgröße des Logos auf 24 Pixel */
+    font-size: 18px; /* Setzt die Schriftgröße des Logos auf 24 Pixel */
     margin-bottom: 20px; /* Füge einen Abstand unter dem Text hinzu */
+    text-align: center; /* Zentriert den Text im Hauptinhalt */
 }
 
-.slide-in-right {
+.c {
     animation: slideInFromRight 3s ease-in-out; /* Wende die Animation auf den Text an, Dauer: 3 Sekunden */
-    font-size: 24px; /* Setzt die Schriftgröße des Logos auf 24 Pixel */
+    font-size: 18px; /* Setzt die Schriftgröße des Logos auf 24 Pixel */
     margin-bottom: 20px; /* Füge einen Abstand unter dem Text hinzu */
+    text-align: left; /* Zentriert den Text im Hauptinhalt */
 }
 
-.slide-in-bottom {
-    animation: slideInFromBottom 3s ease-in-out; /* Animation anwenden, Dauer: 3 Sekunden */
-    margin-bottom: 20px; /* Abstand unter dem Logo */
+.d {
+    animation: slideInFromLeft 3s ease-in-out; /* Animation anwenden, Dauer: 3 Sekunden */
+    margin-bottom: 18px; /* Abstand unter dem Logo */
+    text-align: left; /* Zentriert den Text im Hauptinhalt */
 }
+
+.e {
+    animation: slideInFromBottom    3s ease-in-out; /* Animation anwenden, Dauer: 3 Sekunden */
+    margin-bottom: 18px; /* Abstand unter dem Logo */
+    text-align: left; /* Zentriert den Text im Hauptinhalt */
+}
+
 
 
 
@@ -282,7 +294,7 @@ footer p {
 /* Animationen */
 @keyframes slideInFromLeft {
     0% {
-        transform: translateX(-20%); /* Startposition des Texts: komplett links außerhalb des Viewports */
+        transform: translateX(-10%); /* Startposition des Texts: komplett links außerhalb des Viewports */
         opacity: 0;
     }
     100% {
@@ -304,7 +316,7 @@ footer p {
 
 @keyframes slideInFromRight {
     0% {
-        transform: translateX(20%); /* Startposition des Texts: komplett rechts außerhalb des Viewports */
+        transform: translateX(10%); /* Startposition des Texts: komplett rechts außerhalb des Viewports */
         opacity: 0;
     }
     100% {
@@ -315,7 +327,7 @@ footer p {
 
 @keyframes slideInFromBottom {
     0% {
-        transform: translateY(100%); /* Startposition: unterhalb des sichtbaren Bereichs */
+        transform: translateY(10%); /* Startposition: unterhalb des sichtbaren Bereichs */
         opacity: 0;
     }
     100% {
@@ -323,6 +335,7 @@ footer p {
         opacity: 1;
     }
 }
+
 
 
 /*---------------------------------- Ende Slide-Effekte ----------------------------------*/
@@ -407,66 +420,3 @@ a {
     color: inherit; /* Erbt die Textfarbe des Beitrags */
     text-decoration: none; /* Entfernt die Unterstreichung des Links */
 }
-
-
-
-
-/* Menü Slide */
-
-.slide-in-top {
-    animation: slideInFromTop 2s ease-in-out forwards; /* Wende die Animation auf den Text an, Dauer: 3 Sekunden */
-    font-size: 24px; /* Setzt die Schriftgröße des Logos auf 24 Pixel */
-    margin-bottom: 20px; /* Füge einen Abstand unter dem Text hinzu */
-    position: relative; /* Relativ zum normalen Layout positioniert */
-    opacity: 0; /* Startzustand ist unsichtbar */
-}
-
-/* Zeitliche Verzögerungen für die Animationen */
-.delay-1 {
-    animation-delay: 0s;
-}
-
-.delay-2 {
-    animation-delay: 1s;
-}
-
-.delay-3 {
-    animation-delay: 2s;
-}
-
-.delay-4 {
-    animation-delay: 3s;
-}
-
-@keyframes slideInFromTop {
-    0% {
-        transform: translateY(-100%); /* Startposition des Texts: komplett außerhalb des Viewports oben */
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0); /* Endposition des Texts: an der richtigen Position */
-        opacity: 1;
-    }
-}
-
-
-/* LOGO ANIMATION */
-
-/* Definiere eine neue Klasse für das Logo, das von oben hereinkommt */
-.slide-in-logo-top {
-    animation: slideInFromLogoTop 1s ease-in-out forwards; /* Animation auf das Logo anwenden */
-    opacity: 0; /* Startzustand ist unsichtbar */
-}
-
-/* Keyframes für das Einblenden des Logos von oben */
-@keyframes slideInFromLogoTop {
-    0% {
-        transform: translateY(-100%); /* Startposition des Logos: komplett außerhalb des Viewports oben */
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0); /* Endposition des Logos: an der richtigen Position */
-        opacity: 1;
-    }
-}
-
