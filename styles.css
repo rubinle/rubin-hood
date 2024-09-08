@@ -262,9 +262,10 @@ footer p {
 /* Definiere die Animation für das Hereinfahren von oben */
 .b {
     animation: slideInFromTop 3s ease-in-out; /* Wende die Animation auf den Text an, Dauer: 3 Sekunden */
-    font-size: 18px; /* Setzt die Schriftgröße des Logos auf 24 Pixel */
+    font-size: 20px; /* Setzt die Schriftgröße des Logos auf 24 Pixel */
     margin-bottom: 20px; /* Füge einen Abstand unter dem Text hinzu */
     text-align: center; /* Zentriert den Text im Hauptinhalt */
+    font-weight: bold; /* Macht den gesamten Text fett */
 }
 
 .c {
@@ -277,12 +278,14 @@ footer p {
 .d {
     animation: slideInFromLeft 3s ease-in-out; /* Animation anwenden, Dauer: 3 Sekunden */
     margin-bottom: 18px; /* Abstand unter dem Logo */
+    margin-bottom: 20px; /* Füge einen Abstand unter dem Text hinzu */
     text-align: left; /* Zentriert den Text im Hauptinhalt */
 }
 
 .e {
     animation: slideInFromBottom    3s ease-in-out; /* Animation anwenden, Dauer: 3 Sekunden */
     margin-bottom: 18px; /* Abstand unter dem Logo */
+    margin-bottom: 20px; /* Füge einen Abstand unter dem Text hinzu */
     text-align: left; /* Zentriert den Text im Hauptinhalt */
 }
 
