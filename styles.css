@@ -207,7 +207,7 @@ main {
 
 .content { /* Stile für den zentralen Content-Bereich */
     width: 100%; /* Breite des Inhaltsbereichs ist 80% der Seitenbreite */
-    max-width: 1660px; /* Maximale Breite von 1200px, um auf großen Bildschirmen nicht zu breit zu werden */
+    max-width: 1200px; /* Maximale Breite von 1200px, um auf großen Bildschirmen nicht zu breit zu werden */
     margin: 30px auto 0 auto; /* Setzt 200px nach oben und zentriert horizontal */
     padding: 20px; /* Fügt innenliegenden Abstand hinzu, um den Inhalt vom Rand abzusetzen */
     background-color: #F6F5F1; /* Setzt die Hintergrundfarbe des Content-Bereichs auf weiß */
@@ -366,17 +366,17 @@ footer p {
     gap: 10px; /* Abstand zwischen den Elementen im Beitrag */
     border: 1px solid #c2c2c2; /* Gibt dem Beitrag einen Rahmen */
     border-radius: 8px; /* Macht die Ecken des Rahmens abgerundet */
-    margin: 20px; /* Abstand zwischen den Beiträgen */
+    margin: 10px; /* Abstand zwischen den Beiträgen */
     padding: 10px; /* Innenabstand innerhalb des Beitrags */
-    width: 430px; /* Breite des Containers */
-    max-width: 700px; /* Maximale Breite */
-    height: auto; /* Feste Höhe des Beitrags */
+    width: 340px; /* Breite des Containers */
+    max-width: 340px; /* Maximale Breite */
+    height: 340px; /* Feste Höhe des Beitrags */
     opacity: 0; /* Beitrag ist anfangs unsichtbar */
     transition: transform 1.6s ease-out, opacity 0.6s ease-out; /* Definiert die Übergangsanimationen für Sichtbarkeit und Bewegung */
     background-color: #F6F5F1; /* Hintergrundfarbe des Beitrags */
     transform: translateY(50%); /* Startposition des Beitrags ist unterhalb des sichtbaren Bereichs */
     align-items: center; /* NEU: Zentriert das Bild und den Text horizontal */
-    /* flex-direction: column; /* NEU: Anordnung der Kinder (Bild und Text) vertikal */
+    flex-direction: column; /* NEU: Anordnung der Kinder (Bild und Text) vertikal */
 }
 
 .post.visible {
@@ -390,12 +390,12 @@ footer p {
 }
 
 .post img {
-    width: auto; /* Breite des Bildes */
-    height: auto; /* Höhe des Bildes */
+    width: 100%; /* Breite des Bildes */
+    height: 100%; /* Höhe des Bildes */
     object-fit: contain; /* Das Bild wird so skaliert, dass es den gesamten verfügbaren Platz einnimmt, ohne verzerrt zu werden */
     border-radius: 8px; /* Ecken des Bildes werden abgerundet */
     max-height: 150px; /* NEU: Maximale Höhe des Bildes, um sicherzustellen, dass es nicht zu groß wird */
-    float: left; /* Bild nach rechts ausrichten */
+    float: center; /* Bild nach rechts ausrichten */
     margin-left: 15px; /* Abstand zum Text auf der linken Seite */
 }
 
@@ -422,4 +422,16 @@ footer p {
 a {
     color: inherit; /* Erbt die Textfarbe des Beitrags */
     text-decoration: none; /* Entfernt die Unterstreichung des Links */
+}
+
+
+/* Bild für Blogbeitrag */
+/* Bild für Blogbeitrag */
+img {
+    max-width: 70%;
+    height: auto;
+    display: block; /* Verwandelt das Bild in ein Blockelement */
+    margin-left: auto;
+    margin-right: auto; /* Zentriert das Bild horizontal */
+    cursor: pointer; /* Zeigt an, dass das Bild anklickbar ist */
 }

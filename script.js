@@ -104,3 +104,26 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+
+
+
+
+
+
+
+function openImage() {
+    // Erstelle ein neues div für das große Bild
+    var fullImageDiv = document.createElement("div");
+    fullImageDiv.id = "fullImage";
+    fullImageDiv.onclick = function() {
+        document.body.removeChild(fullImageDiv); // Schließt das Bild bei Klick
+    };
+    
+    // Füge das große Bild hinzu
+    var fullImage = document.createElement("img");
+    fullImage.src = document.getElementById("smallImage").src;
+    
+    fullImageDiv.appendChild(fullImage);
+    document.body.appendChild(fullImageDiv);
+}
