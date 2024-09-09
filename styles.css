@@ -117,7 +117,7 @@ header {
     align-items: center;
     position: fixed;
     top: 0;
-    right: -100%; /* Menü startet außerhalb des Bildschirms */
+    /*right: -100%; /* Menü startet außerhalb des Bildschirms */
     height: 100vh;
     background-color: #F6F5F1;
     z-index: 1050;
