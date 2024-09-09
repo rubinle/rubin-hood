@@ -95,11 +95,19 @@ header {
 }
 
 /* --------------------------------- Hamburger Menü Styling --------------------------------- */
+.hamburger-menu {
+    display: none; /* Versteckt das Hamburger-Menü standardmäßig */
+    flex-direction: column; /* Ordnet die Balken des Hamburger-Menüs vertikal an */
+    gap: 5px; /* Fügt einen Abstand von 5px zwischen den Balken hinzu */
+    cursor: pointer; /* Ändert den Mauszeiger in eine Hand, wenn über das Menü gefahren wird */
+    /* z-index: 1100; /* Stellt sicher, dass das Hamburger-Menü über dem Hauptinhalt liegt */
+}
+
 
 .hamburger-menu {
     display: none;
     position: absolute; /* Stelle sicher, dass die Position festgelegt ist */
-    right: 20px; /* Passe dies je nach Design an */
+    right: 30px; /* Passe dies je nach Design an */
     top: 20px;  /* Passe dies ebenfalls an */
     flex-direction: column;
     gap: 5px;
