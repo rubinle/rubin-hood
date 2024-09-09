@@ -124,7 +124,7 @@ header {
     width: 200px;
     padding: 20px;
     border-left: 1px solid #c2c2c2;
-    transition: right 0.5s ease; /* Transition auch im Ausgangszustand definieren */
+    /*transition: right 0.5s ease; /* Transition auch im Ausgangszustand definieren */
 }
 
 .mobile-menu.open {
