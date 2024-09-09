@@ -5,86 +5,69 @@ const hamburgerMenu = document.querySelector('.hamburger-menu');
 const mobileMenu = document.querySelector('.mobile-menu'); 
 // Wählt das HTML-Element mit der Klasse 'mobile-menu' aus und speichert es in der Variable 'mobileMenu'.
 
+const closeMenu = document.querySelector('.close-menu'); 
+// Wählt das Schließen-Symbol im mobilen Menü aus
+
 /* --------------------------------- Event Listener für das Hamburger-Menü --------------------------------- */
 hamburgerMenu.addEventListener('click', () => { 
-    // Fügt einen Klick-Event-Listener zum Hamburger-Menü hinzu. Jedes Mal, wenn das Hamburger-Menü angeklickt wird, wird die Funktion ausgeführt.
-    
+    // Fügt einen Klick-Event-Listener zum Hamburger-Menü hinzu
     mobileMenu.classList.toggle('open'); 
-    // Schaltet die Klasse 'open' im 'mobileMenu' um. Wenn die Klasse 'open' vorhanden ist, wird sie entfernt, und wenn sie nicht vorhanden ist, wird sie hinzugefügt. Dadurch wird das mobile Menü sichtbar oder unsichtbar gemacht.
+    // Schaltet die Klasse 'open' im 'mobileMenu' um, damit das Menü ein- und ausgeblendet wird
 });
 
+/* --------------------------------- Event Listener für das Schließen-Symbol --------------------------------- */
+closeMenu.addEventListener('click', () => {
+    mobileMenu.classList.remove('open'); 
+    // Schließt das mobile Menü beim Klicken auf das Schließen-Symbol
+});
 
 // Schließen des Menüs beim Klicken außerhalb des Menüs
 document.addEventListener('click', (event) => {
-    // Prüfen, ob der Klick außerhalb des Menüs und nicht auf das Hamburger-Menü erfolgt ist
-    if (!mobileMenu.contains(event.target) && !hamburgerMenu.contains(event.target)) {
+    if (!mobileMenu.contains(event.target) && !hamburgerMenu.contains(event.target) && !closeMenu.contains(event.target)) {
         mobileMenu.classList.remove('open');
     }
 });
 
-
-const closeMenu = document.querySelector('.close-menu'); 
-
-closeMenu.addEventListener('click', () => {
-    mobileMenu.classList.remove('open'); // Entferne die Klasse 'open', um das Menü zu schließen
-});
-
-
-
 /*---------------------------------- Steuerung der Header-Transparenz beim Scrollen ----------------------------------*/
-/* Variable zur Speicherung der letzten Scrollposition */
 let lastScrollTop = 0; 
 let header = document.querySelector('header'); 
-/* Selektiert das Header-Element */
 
 window.addEventListener('scroll', function() {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop; 
-    /* Ermittelt die aktuelle Scrollposition */
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
     if (scrollTop > lastScrollTop) {
-        // Beim Scrollen nach unten: Header wird transparent
         header.classList.add('header-transparent');
     } else if (scrollTop === 0) {
-        // Wenn bis ganz nach oben gescrollt: Header wird wieder sichtbar
         header.classList.remove('header-transparent');
     }
 
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
-    /* ScrollTop darf nicht negativ werden */
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 });
 
-/*---------------------------------- Ende Steuerung der Header-Transparenz beim Scrollen ----------------------------------*/
-
-
-
-
-
-
-
+/*---------------------------------- Beiträge Animationen beim Laden und Scrollen ----------------------------------*/
 window.addEventListener('load', function() {
-    const posts = document.querySelectorAll('.post'); /* Wählt alle Elemente mit der Klasse "post" aus */
-    for (let i = 0; i < 3 && i < posts.length; i++) { /* Schleife, die die ersten drei Beiträge durchläuft */
+    const posts = document.querySelectorAll('.post'); 
+    for (let i = 0; i < 3 && i < posts.length; i++) {
         setTimeout(() => {
-            posts[i].classList.add('visible'); /* Fügt die Klasse "visible" hinzu, um den Beitrag sichtbar zu machen */
-        }, i * 300); /* Zeitverzögerung für die Animation der Beiträge, damit sie nacheinander erscheinen */
+            posts[i].classList.add('visible');
+        }, i * 300);
     }
 });
 
 document.addEventListener('scroll', function() {
-    const posts = document.querySelectorAll('.post'); /* Wählt alle Elemente mit der Klasse "post" aus */
-    const scrollPosition = window.scrollY + window.innerHeight; /* Berechnet die aktuelle Scrollposition und die Höhe des Fensters */
+    const posts = document.querySelectorAll('.post');
+    const scrollPosition = window.scrollY + window.innerHeight;
 
     posts.forEach((post, index) => {
-        if (post.getBoundingClientRect().top + window.scrollY < scrollPosition) { /* Überprüft, ob der Beitrag im sichtbaren Bereich des Fensters ist */
+        if (post.getBoundingClientRect().top + window.scrollY < scrollPosition) {
             setTimeout(() => {
-                post.classList.add('visible'); /* Macht den Beitrag sichtbar, wenn er in den sichtbaren Bereich scrollt */
-            }, (index + 3) * 100); /* Zeitverzögerung für die Animation der Beiträge, damit sie nacheinander beim Scrollen erscheinen */
+                post.classList.add('visible');
+            }, (index + 3) * 100);
         }
     });
 });
 
-
-
+/*---------------------------------- Lazy Loading für Bilder ----------------------------------*/
 document.addEventListener('DOMContentLoaded', function() {
     const lazyImages = document.querySelectorAll('img[loading="lazy"]');
 
@@ -93,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
             entries.forEach(function(entry) {
                 if (entry.isIntersecting) {
                     let lazyImage = entry.target;
-                    lazyImage.src = lazyImage.src;  // Hier direkt das src-Attribut nutzen
+                    lazyImage.src = lazyImage.src;
                     lazyImageObserver.unobserve(lazyImage);
                 }
             });
@@ -105,22 +88,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-
-
-
-
-
-
-
+/*---------------------------------- Bild öffnen Funktion ----------------------------------*/
 function openImage() {
-    // Erstelle ein neues div für das große Bild
     var fullImageDiv = document.createElement("div");
     fullImageDiv.id = "fullImage";
     fullImageDiv.onclick = function() {
-        document.body.removeChild(fullImageDiv); // Schließt das Bild bei Klick
+        document.body.removeChild(fullImageDiv);
     };
     
-    // Füge das große Bild hinzu
     var fullImage = document.createElement("img");
     fullImage.src = document.getElementById("smallImage").src;
     

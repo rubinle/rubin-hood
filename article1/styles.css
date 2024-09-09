@@ -69,7 +69,7 @@ header {
 .nav-links a {
     color: #AFB0B6; /* Setzt die Textfarbe der Links auf Weiß */
     text-decoration: none; /* Entfernt Unterstreichungen von den Links */
-    font-size: 18px; /* Setzt die Schriftgröße der Links auf 18px */
+    font-size: 22px; /* Setzt die Schriftgröße der Links auf 18px */
     transition: color 0.3s; /* Fügt eine sanfte Übergangsanimation für die Textfarbe hinzu */
 }
 
@@ -112,24 +112,22 @@ header {
 
 /* --------------------------------- Mobile Menü Styling --------------------------------- */
 .mobile-menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    right: -100%; /* Menü startet außerhalb des Bildschirms */
-    height: 100vh;
-    background-color: #F6F5F1;
-    z-index: 1050;
-    width: 200px;
-    padding: 20px;
-    border-left: 1px solid #c2c2c2;
-    transition: right 0.9s ease; /* Transition auch im Ausgangszustand definieren */
-}
-
-.mobile-menu.open {
-    right: 0; /* Menü fährt in den sichtbaren Bereich */
-
+    display: none; /* Versteckt das mobile Menü standardmäßig */
+    flex-direction: column; /* Ordnet die Inhalte des mobilen Menüs vertikal an */
+    align-items: center; /* Zentriert die Inhalte des mobilen Menüs horizontal */
+    background-color: #F6F5F1; /* Setzt die Hintergrundfarbe des mobilen Menüs auf ein dunkles Grau (#333) */
+    padding: 20px; /* Fügt Innenabstände von 20px um das mobile Menü herum hinzu */
+    position: absolute; /* Positioniert das mobile Menü relativ zum nächsthöheren Element mit 'position: relative' */
+    /* position: fixed; /* Fixiert das mobile Menü über dem restlichen Inhalt */
+    top: 25%; /* Positioniert das mobile Menü 60px unterhalb des Headers */
+    /* right: 50%; /* Setzt das mobile Menü an den rechten Rand des Containers */
+    left: 60%; /* Setzt das mobile Menü an den linken Rand des Containers */
+    transform: translate(-50%, -50%); /* Verschiebt das Menü um 50% seiner eigenen Breite und Höhe, um es zu zentrieren */
+    z-index: 1050; /* Stellt sicher, dass das mobile Menü über dem Hauptinhalt und dem Header liegt */
+    width: 90%; /* Verkleinert die Breite des Menüs auf sehr kleinen Bildschirmen */
+    max-width: 300px; /* Begrenze die maximale Breite des Menüs */
+    border: 1px solid #04A4BA; /* Fügt einen Rahmen von 2px hinzu, Farbe ist #04A4BA */
+    border-radius: 8px; /* Rundet die Ecken des Rahmens ab */
 }
 
 
@@ -142,7 +140,6 @@ header {
     flex-direction: column; /* Ordnet die Links im mobilen Menü vertikal an */
     gap: 15px; /* Fügt einen Abstand von 15px zwischen den Links hinzu */
     text-align: center; /* Zentriert den Text der Links im mobilen Menü */
-    margin-top: 50px; /* Verschiebt die Links um 50px nach unten */
 }
 
 .mobile-menu a {
@@ -158,21 +155,6 @@ header {
 }
 
 
-.close-menu {
-    position: absolute; /* Positioniere das Schließen-Symbol */
-    top: 5px;
-    right: 30px;
-    font-size: 50px;
-    cursor: pointer;
-    color: #AFB0B6; /* Setzt die Farbe des Symbols */
-}
-
-.close-menu:hover {
-    color: #04A4BA; /* Farbe beim Hover (optional) */
-}
-
-
-
 /* --------------------------------- Medienabfragen für kleinere Bildschirme --------------------------------- */
 @media (max-width: 768px) {
     .nav-links, .social-icons {
@@ -184,15 +166,13 @@ header {
     }
 
     .mobile-menu {
-        right: -300px; /* Positioniere das mobile Menü außerhalb des Bildschirms */
+        display: none; /* Versteckt das mobile Menü, bis es aktiv geöffnet wird */
     }
 
     .mobile-menu.open {
-        right: 0; /* Bringt das mobile Menü ins sichtbare Bild */
-        transition: right 0.5s ease; /* Übergang */
+        display: flex; /* Zeigt das mobile Menü an, wenn es geöffnet wird */
     }
 }
-
 
 
 
@@ -202,14 +182,14 @@ header {
 /* Diese Sektion betrifft den Hauptteil der Webseite */
 main {
     /* padding: 200px 200px 200px; /* Fügt einen Abstand von 50 Pixeln um den Hauptinhalt herum hinzu */
-    /* text-align: center; /* Zentriert den Text im Hauptinhalt */
+    text-align: center; /* Zentriert den Text im Hauptinhalt */
     padding-top: 100px; /* Höhe des Headers plus etwas zusätzlichen Platz */
 
 }
 
 .content { /* Stile für den zentralen Content-Bereich */
     width: 100%; /* Breite des Inhaltsbereichs ist 80% der Seitenbreite */
-    max-width: 1200px; /* Maximale Breite von 1200px, um auf großen Bildschirmen nicht zu breit zu werden */
+    max-width: 1660px; /* Maximale Breite von 1200px, um auf großen Bildschirmen nicht zu breit zu werden */
     margin: 30px auto 0 auto; /* Setzt 200px nach oben und zentriert horizontal */
     padding: 20px; /* Fügt innenliegenden Abstand hinzu, um den Inhalt vom Rand abzusetzen */
     background-color: #F6F5F1; /* Setzt die Hintergrundfarbe des Content-Bereichs auf weiß */
@@ -231,7 +211,7 @@ footer {
     position: relative; /* Erlaubt die Positionierung von Elementen innerhalb des Footers */
     flex-direction: column; /* Ordnet die Elemente im Footer vertikal an */
     align-items: center; /* Zentriert die Elemente im Footer horizontal */
-    gap: 10px; /* Fügt einen Abstand von 20px zwischen den Flex-Elementen hinzu */
+    gap: 20px; /* Fügt einen Abstand von 20px zwischen den Flex-Elementen hinzu */
 }
 
 footer p {
@@ -248,49 +228,34 @@ footer p {
     /* font-size: 1.9em; /* Beispielhafte Schriftgröße, passe sie nach Bedarf an */
     opacity: 0; /* Initiale Sichtbarkeit auf 0 setzen */
     animation-fill-mode: forwards; /* Sicherstellen, dass die Animation bei 100% bleibt */
-    animation-delay: 5s; /* Verzögerung bevor die Animation startet, z.B. 0.5 Sekunden */
+    animation-delay: 33.5s; /* Verzögerung bevor die Animation startet, z.B. 0.5 Sekunden */
     opacity: 1; /* Sichtbarkeit wieder auf 1 setzen */
 }
 
 /* Definiere die Animation für das Hereinfahren von links */
-.a {
+.slide-in-left {
     animation: slideInFromLeft 3s ease-in-out; /* Wende die Animation auf den Text an, Dauer: 3 Sekunden */
-    font-size: 18px; /* Setzt die Schriftgröße des Logos auf 24 Pixel */
+    font-size: 24px; /* Setzt die Schriftgröße des Logos auf 24 Pixel */
     margin-bottom: 20px; /* NEU: Füge einen Abstand unter dem Text hinzu */
-    text-align: right; /* Zentriert den Text im Hauptinhalt */
-    font-style: italic; /* Macht den Text innerhalb eines Absatzes kursiv */
 }
 
 /* Definiere die Animation für das Hereinfahren von oben */
-.b {
+.slide-in-top {
     animation: slideInFromTop 3s ease-in-out; /* Wende die Animation auf den Text an, Dauer: 3 Sekunden */
-    font-size: 18px; /* Setzt die Schriftgröße des Logos auf 24 Pixel */
+    font-size: 24px; /* Setzt die Schriftgröße des Logos auf 24 Pixel */
     margin-bottom: 20px; /* Füge einen Abstand unter dem Text hinzu */
-    text-align: center; /* Zentriert den Text im Hauptinhalt */
-    font-weight: bold; /* Macht den gesamten Text fett */
 }
 
-.c {
+.slide-in-right {
     animation: slideInFromRight 3s ease-in-out; /* Wende die Animation auf den Text an, Dauer: 3 Sekunden */
-    font-size: 18px; /* Setzt die Schriftgröße des Logos auf 24 Pixel */
+    font-size: 24px; /* Setzt die Schriftgröße des Logos auf 24 Pixel */
     margin-bottom: 20px; /* Füge einen Abstand unter dem Text hinzu */
-    text-align: left; /* Zentriert den Text im Hauptinhalt */
 }
 
-.d {
-    animation: slideInFromLeft 3s ease-in-out; /* Animation anwenden, Dauer: 3 Sekunden */
-    margin-bottom: 18px; /* Abstand unter dem Logo */
-    margin-bottom: 20px; /* Füge einen Abstand unter dem Text hinzu */
-    text-align: left; /* Zentriert den Text im Hauptinhalt */
+.slide-in-bottom {
+    animation: slideInFromBottom 3s ease-in-out; /* Animation anwenden, Dauer: 3 Sekunden */
+    margin-bottom: 20px; /* Abstand unter dem Logo */
 }
-
-.e {
-    animation: slideInFromBottom    3s ease-in-out; /* Animation anwenden, Dauer: 3 Sekunden */
-    margin-bottom: 18px; /* Abstand unter dem Logo */
-    margin-bottom: 20px; /* Füge einen Abstand unter dem Text hinzu */
-    text-align: left; /* Zentriert den Text im Hauptinhalt */
-}
-
 
 
 
@@ -299,7 +264,7 @@ footer p {
 /* Animationen */
 @keyframes slideInFromLeft {
     0% {
-        transform: translateX(-10%); /* Startposition des Texts: komplett links außerhalb des Viewports */
+        transform: translateX(-20%); /* Startposition des Texts: komplett links außerhalb des Viewports */
         opacity: 0;
     }
     100% {
@@ -321,7 +286,7 @@ footer p {
 
 @keyframes slideInFromRight {
     0% {
-        transform: translateX(10%); /* Startposition des Texts: komplett rechts außerhalb des Viewports */
+        transform: translateX(20%); /* Startposition des Texts: komplett rechts außerhalb des Viewports */
         opacity: 0;
     }
     100% {
@@ -332,7 +297,7 @@ footer p {
 
 @keyframes slideInFromBottom {
     0% {
-        transform: translateY(10%); /* Startposition: unterhalb des sichtbaren Bereichs */
+        transform: translateY(100%); /* Startposition: unterhalb des sichtbaren Bereichs */
         opacity: 0;
     }
     100% {
@@ -340,7 +305,6 @@ footer p {
         opacity: 1;
     }
 }
-
 
 
 /*---------------------------------- Ende Slide-Effekte ----------------------------------*/
@@ -368,18 +332,17 @@ footer p {
     gap: 10px; /* Abstand zwischen den Elementen im Beitrag */
     border: 1px solid #c2c2c2; /* Gibt dem Beitrag einen Rahmen */
     border-radius: 8px; /* Macht die Ecken des Rahmens abgerundet */
-    margin: 10px; /* Abstand zwischen den Beiträgen */
+    margin: 20px; /* Abstand zwischen den Beiträgen */
     padding: 10px; /* Innenabstand innerhalb des Beitrags */
-    width: 340px; /* Breite des Containers */
-    height: 340px; /* Feste Höhe des Beitrags */
-    max-width: 340px; /* Maximale Breite */
+    width: 440px; /* Breite des Containers */
+    max-width: 700px; /* Maximale Breite */
+    height: auto; /* Feste Höhe des Beitrags */
     opacity: 0; /* Beitrag ist anfangs unsichtbar */
     transition: transform 1.6s ease-out, opacity 0.6s ease-out; /* Definiert die Übergangsanimationen für Sichtbarkeit und Bewegung */
     background-color: #F6F5F1; /* Hintergrundfarbe des Beitrags */
     transform: translateY(50%); /* Startposition des Beitrags ist unterhalb des sichtbaren Bereichs */
     align-items: center; /* NEU: Zentriert das Bild und den Text horizontal */
-    flex-direction: column; /* NEU: Anordnung der Kinder (Bild und Text) vertikal */
-    justify-content: center; /* Zentriert den Inhalt vertikal */
+    /* flex-direction: column; /* NEU: Anordnung der Kinder (Bild und Text) vertikal */
 }
 
 .post.visible {
@@ -393,23 +356,14 @@ footer p {
 }
 
 .post img {
-    width: 230px; /* Breite des Bildes */
+    width: auto; /* Breite des Bildes */
     height: auto; /* Höhe des Bildes */
-    display: block; /* Verwandelt das Bild in ein Blockelement */
     object-fit: contain; /* Das Bild wird so skaliert, dass es den gesamten verfügbaren Platz einnimmt, ohne verzerrt zu werden */
     border-radius: 8px; /* Ecken des Bildes werden abgerundet */
-    /*max-height: 150px; /* NEU: Maximale Höhe des Bildes, um sicherzustellen, dass es nicht zu groß wird */
-    float: center; /* Bild nach rechts ausrichten */
-    margin-left: auto;
-    margin-right: auto; /* Zentriert das Bild horizontal */
-    filter: grayscale(100%); /* Macht das Bild schwarz-weiß */
-    padding: 10px;
+    max-height: 150px; /* NEU: Maximale Höhe des Bildes, um sicherzustellen, dass es nicht zu groß wird */
+    float: left; /* Bild nach rechts ausrichten */
+    margin-left: 15px; /* Abstand zum Text auf der linken Seite */
 }
-
-.post img:hover {
-    filter: grayscale(0%); /* Entfernt den Schwarz-Weiß-Effekt beim Hover */
-}
-
 
 .post-content {
     flex: 1; /* Der Textinhalt nimmt den verbleibenden Platz im Beitrag ein */
@@ -434,4 +388,45 @@ footer p {
 a {
     color: inherit; /* Erbt die Textfarbe des Beitrags */
     text-decoration: none; /* Entfernt die Unterstreichung des Links */
+}
+
+
+
+
+/* Menü Slide */
+
+.slide-in-top {
+    animation: slideInFromTop 3s ease-in-out forwards; /* Wende die Animation auf den Text an, Dauer: 3 Sekunden */
+    font-size: 24px; /* Setzt die Schriftgröße des Logos auf 24 Pixel */
+    margin-bottom: 20px; /* Füge einen Abstand unter dem Text hinzu */
+    position: relative; /* Relativ zum normalen Layout positioniert */
+    opacity: 0; /* Startzustand ist unsichtbar */
+}
+
+/* Zeitliche Verzögerungen für die Animationen */
+.delay-1 {
+    animation-delay: 0s;
+}
+
+.delay-2 {
+    animation-delay: 1s;
+}
+
+.delay-3 {
+    animation-delay: 2s;
+}
+
+.delay-4 {
+    animation-delay: 3s;
+}
+
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-100%); /* Startposition des Texts: komplett außerhalb des Viewports oben */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); /* Endposition des Texts: an der richtigen Position */
+        opacity: 1;
+    }
 }
