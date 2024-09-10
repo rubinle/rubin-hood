@@ -112,6 +112,10 @@ header {
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
+<<<<<<< HEAD
+=======
+    z-index: 1100;
+>>>>>>> a09189807a5f46223cc972bd5dcd13fd3c6179a0
 }
 
 .hamburger-menu span {
