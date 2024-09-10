@@ -123,20 +123,12 @@ header {
 
 /* --------------------------------- Mobile Menü Styling --------------------------------- */
 .mobile-menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: fixed;
-    top: 20px;  /* Passe dies ebenfalls an */
-    right: -100%; /* Menü startet außerhalb des Bildschirms */
-    height: 100vh;
-    background-color: #F6F5F1;
-    z-index: 1050;
-    width: 200px;
-    padding: 20px;
-    border-left: 1px solid #c2c2c2;
-    transition: right 0.5s ease; /* Transition auch im Ausgangszustand definieren */
+    position: fixed; /* Wichtig, um die Positionierung zu steuern */
+    right: -300px; /* Setze einen festen Wert für die Startposition */
+    top: 0;
+    transition: right 0.3s ease;
 }
+
 
 .mobile-menu.open {
     /*Sright: 0; /* Menü fährt in den sichtbaren Bereich */
