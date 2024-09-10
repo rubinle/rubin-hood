@@ -385,7 +385,7 @@ footer p {
     height: 340px; /* Feste Höhe des Beitrags */
     max-width: 340px; /* Maximale Breite */
     opacity: 0; /* Beitrag ist anfangs unsichtbar */
-    transition: transform 0.5s ease-out, opacity 1s ease-out; /* Definiert die Übergangsanimationen für Sichtbarkeit und Bewegung */
+    transition: transform 2s ease-out, opacity 1s ease-out; /* Definiert die Übergangsanimationen für Sichtbarkeit und Bewegung */
     background-color: #F6F5F1; /* Hintergrundfarbe des Beitrags */
     transform: translateY(50%); /* Startposition des Beitrags ist unterhalb des sichtbaren Bereichs */
     align-items: center; /* NEU: Zentriert das Bild und den Text horizontal */
